@@ -30,8 +30,6 @@
     Then I should see an error message
 ```
 
-1. Create _Features_ directory which includes the following files :
-
   ## $${\color{green}login1.features}$$
    
    ▶️ Functionality Menu Login with unreal data.
@@ -48,6 +46,37 @@
     And I press the login button
     Then I should see an error message
 ```
+
+ ## $${\color{green}register.features}$$
+
+ ```ruby
+Feature: Register Feature
+
+  Background:
+    Given I am on the register page
+
+  @second
+  Scenario: Register with incorect credentials, diferit password
+
+    # When I press the logout button
+    When I press the register button
+    And I enter "Razvan" in FirstName field
+    And I enter "Ungar" in LastName field
+    And I enter "Ciocarliei" in Adress field
+    And I enter "Resita" in City field
+    And I enter "CarasSeverin" in State field
+    And I enter "Z320038" in Zip Code field
+    And I enter "P0726165557" in Phone field
+    And I enter "SSN1740827354807" in SSN field
+    And I enter "Razvan11997744" in User field
+    And I enter "Bnc48757960" in Passw field
+    And I enter "Bnc487579601" in Confirm field
+    And I press the submit button
+    Then I should see an error register message
+```
+
+
+
 
 
 

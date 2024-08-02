@@ -74,6 +74,24 @@ Feature: Register Feature
     And I press the submit button
     Then I should see an error register message
 ```
+## $${\color{green}open_account.features}$$
+
+```ruby
+Feature: Open account
+
+#  Background:
+#  As a user
+#  I want to open a new account
+#  So that I can use the banking services
+  @three
+  Scenario: Successfully open a new account
+    Given I am on the open account page
+    When I fill in the account details
+    And I submit the form
+    Then I should see a confirmation message
+```
+
+
 
 
 

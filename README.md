@@ -11,6 +11,11 @@
 
 ## ▶️ Definition of test scenarios:
 
+1. Create _Features_ directory which includes the following files :
+
+   * login.features
+
+
 
 
 

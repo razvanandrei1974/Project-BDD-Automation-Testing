@@ -56,7 +56,7 @@ Feature: Register Feature
     Given I am on the register page
 
   @second
-  Scenario: Register with incorect credentials, diferit password
+  Scenario: Register with corect and real credentials.
 
     # When I press the logout button
     When I press the register button

@@ -30,6 +30,26 @@
     Then I should see an error message
 ```
 
+1. Create _Features_ directory which includes the following files :
+
+  ## $${\color{green}login1.features}$$
+   
+   ▶️ Functionality Menu Login with unreal data.
+   
+```ruby
+  Feature: Login Feature
+  Background:
+    Given I am on the login page
+  @first
+  Scenario: Login with wrong credentials
+
+    When I enter "user_name" in username field
+    And I enter "password" in password field
+    And I press the login button
+    Then I should see an error message
+```
+
+
 
 
 

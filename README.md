@@ -91,6 +91,10 @@ Feature: Open account
     Then I should see a confirmation message
 ```
 
+2. Create _Pages_ directory which includes the following files :
+
+
+## $${\color{darkorange}login page}$$
 
 
 

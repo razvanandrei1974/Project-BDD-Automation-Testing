@@ -74,7 +74,7 @@ Feature: Register Feature
     And I press the submit button
     Then I should see an error register message
 ```
-## $${\color{green}open_account.features}$$
+## $${\color{green}open account.features}$$
 
 ```ruby
 Feature: Open account

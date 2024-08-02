@@ -122,6 +122,81 @@ class LoginPage(Browser):
     def get_error_message(self):
         return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
 ```
+## $${\color{darkorange}register page}$$
+
+```ruby
+from selenium.webdriver.common.by import By
+
+from browser import Browser
+
+
+class RegisterPage(Browser):
+    # LOGOUT_BUTTON_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[1]/ul/li[8]/a')
+    REGISTER_BUTTON_SELECTOR = (By.CSS_SELECTOR, '#loginPanel > p:nth-child(3) > a')
+    FIRSTNAME_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[1]/td[2]/input')
+    LASTNAME_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[2]/td[2]/input')
+    ADRESS_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[3]/td[2]/input')
+    CITY_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[4]/td[2]/input')
+    STATE_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[5]/td[2]/input')
+    ZIPCODE_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[6]/td[2]/input')
+    PHONE_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[7]/td[2]/input')
+    SSN_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[8]/td[2]/input')
+    USER_FIELD_SELECTOR = (By.XPATH, '//*[@id="customer.username"]')
+    PASSW_FIELD_SELECTOR = (By.XPATH, '//*[@id="customer.password"]')
+    CONFIRM_FIELD_SELECTOR = (By.XPATH, '//*[@id="repeatedPassword"]')
+    SUBMIT_BUTTON_SELECTOR = (By.XPATH, '//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input')
+    MESSAGE_ERROR_LABEL = (By.XPATH, '//*[@id="repeatedPassword.errors"]')
+
+    def navigate_to_register_page(self):
+        self.driver.get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC")
+
+    # def click_logout_button(self):
+    #     self.driver.find_element(*self.LOGOUT_BUTTON_SELECTOR).click()
+
+    def click_register_button(self):
+        self.driver.find_element(*self.REGISTER_BUTTON_SELECTOR).click()
+
+    def enter_firstname(self, Razvan):
+        self.driver.find_element(*self.FIRSTNAME_FIELD_SELECTOR).send_keys(Razvan)
+
+    def enter_lastname(self, Ungar):
+        self.driver.find_element(*self.LASTNAME_FIELD_SELECTOR).send_keys(Ungar)
+
+    def enter_adress(self, Ciocarliei):
+        self.driver.find_element(*self.ADRESS_FIELD_SELECTOR).send_keys(Ciocarliei)
+
+    def enter_city(self, Resita):
+        self.driver.find_element(*self.CITY_FIELD_SELECTOR).send_keys(Resita)
+
+    def enter_state(self, CarasSeverin):
+        self.driver.find_element(*self.STATE_FIELD_SELECTOR).send_keys(CarasSeverin)
+
+    def enter_zipcode(self, Z320038):
+        self.driver.find_element(*self.ZIPCODE_FIELD_SELECTOR).send_keys(Z320038)
+
+    def enter_phone(self, P0726165557):
+        self.driver.find_element(*self.PHONE_FIELD_SELECTOR).send_keys(P0726165557)
+
+    def enter_ssn(self, SSN1740827354807):
+        self.driver.find_element(*self.SSN_FIELD_SELECTOR).send_keys(SSN1740827354807)
+
+    def enter_user(self, Razvan11997744):
+        self.driver.find_element(*self.USER_FIELD_SELECTOR).send_keys(Razvan11997744)
+
+    def enter_passw(self, Bnc48757960):
+        self.driver.find_element(*self.PASSW_FIELD_SELECTOR).send_keys(Bnc48757960)
+
+    def enter_confirm_field(self, Bnc487579601):
+        self.driver.find_element(*self.CONFIRM_FIELD_SELECTOR).send_keys(Bnc487579601)
+
+    def click_submit_button(self):
+        self.driver.find_element(*self.SUBMIT_BUTTON_SELECTOR).click()
+
+    def get_message(self):
+        return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
+```
+
+
 
 
 

@@ -13,7 +13,22 @@
 
 1. Create _Features_ directory which includes the following files :
 
-   * login.features
+  ## $${\color{green}login.features}$$
+   
+   ▶️ Functionality Menu Login with real and corect data.
+   
+```ruby
+  Feature: Login Feature
+  Background:
+    Given I am on the login page
+  @first
+  Scenario: Login with wrong credentials
+
+    When I enter "Razvan1199774499@" in username field
+    And I enter "Bnc48757960$" in password field
+    And I press the login button
+    Then I should see an error message
+```
 
 
 

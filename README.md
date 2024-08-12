@@ -195,6 +195,43 @@ class RegisterPage(Browser):
 
 ## $${\color{darkorange}openaccount-page}$$
 
+``` ruby
+from behave import given, when, then
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
+
+@given('I am on the open account page')
+def step_given_on_open_account_page(context):
+    context.browser = webdriver.Chrome()
+    context.browser.get('https://parabank.parasoft.com/parabank/openaccount.htm')
+
+
+@when('I fill in the account details')
+def step_when_fill_in_account_details(context):
+    # Select account type
+    account_type_dropdown = Select(context.browser.find_element(By.ID, 'type'))
+    account_type_dropdown.select_by_visible_text('SAVINGS')
+
+    # Select from account
+    from_account_dropdown = Select(context.browser.find_element(By.ID, 'fromAccountId'))
+    from_account_dropdown.select_by_index(0)  # Select the first account in the list
+
+
+@when('I submit the form')
+def step_when_submit_form(context):
+    submit_button = context.browser.find_element(By.XPATH, '//input[@value="Open New Account"]')
+    submit_button.click()
+
+
+@then('I should see a confirmation message')
+def step_then_see_confirmation_message(context):
+    confirmation_message = context.browser.find_element(By.XPATH, '//h1[text()="Account Opened!"]')
+    assert confirmation_message.is_displayed()
+
+```
+
 
 
 

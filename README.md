@@ -95,7 +95,9 @@ Feature: Open account
 
 
 ## 2.1. $${\color{darkorange}login-page}$$
+
 ``ruby
+
 from selenium.webdriver.common.by import By
 
 from browser import Browser
@@ -121,7 +123,7 @@ class LoginPage(Browser):
 
     def get_error_message(self):
         return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
-```
+
 
 ## 2.2. $${\color{darkorange}register-page}$$
 

@@ -6,15 +6,27 @@
 
 ## 📌 Installation and configuration:
 
-🖥️ I installed Behave, Selenium library, WebDriver for Python.
+🖥️ I installed Behave, , WebDriver for Python.
+
+### pip install behave 
+
+🖥️ I installed Selenium Library
+
+### pip install -U selenium
+
+🖥️ I installed WebDriver for Python
+
+```ruby
+
+from selenium.webdriver.common.by import By
+
+from browser import Browser
+```
+
+## Create _Pages_ directory which includes the following files :
 
 
-
-
-## 1. Create _Pages_ directory which includes the following files :
-
-
-## 2.1. $${\color{darkorange}login-page}$$
+## $${\color{darkorange}login-page}$$
 
 ``ruby
 
@@ -45,7 +57,7 @@ class LoginPage(Browser):
         return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
 
 
-## 2.2. $${\color{darkorange}register-page}$$
+## $${\color{darkorange}register-page}$$
 
 ```ruby
 from selenium.webdriver.common.by import By
@@ -116,7 +128,7 @@ class RegisterPage(Browser):
         return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
 ```
 
-## 2.3. $${\color{darkorange}openaccount-page}$$
+## $${\color{darkorange}openaccount-page}$$
 
 ``` ruby
 from behave import given, when, then

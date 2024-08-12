@@ -94,8 +94,8 @@ Feature: Open account
 ## 2. Create _Pages_ directory which includes the following files :
 
 
-## $${\color{darkorange}login-page}$$
-```ruby
+## 2.1. $${\color{darkorange}login-page}$$
+``ruby
 from selenium.webdriver.common.by import By
 
 from browser import Browser
@@ -122,7 +122,8 @@ class LoginPage(Browser):
     def get_error_message(self):
         return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
 ```
-## $${\color{darkorange}register-page}$$
+
+## 2.2. $${\color{darkorange}register-page}$$
 
 ```ruby
 from selenium.webdriver.common.by import By
@@ -193,7 +194,7 @@ class RegisterPage(Browser):
         return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
 ```
 
-## $${\color{darkorange}openaccount-page}$$
+## 2.3. $${\color{darkorange}openaccount-page}$$
 
 ``` ruby
 from behave import given, when, then
@@ -231,6 +232,10 @@ def step_then_see_confirmation_message(context):
     assert confirmation_message.is_displayed()
 
 ```
+
+## 3. Create _Steps_ directory which includes the following files :
+
+
 
 
 

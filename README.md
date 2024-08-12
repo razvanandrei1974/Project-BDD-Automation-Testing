@@ -17,6 +17,11 @@
 
 ### pip install -U selenium
 
+![Selenium](https://github.com/user-attachments/assets/21ebede8-3d86-49a0-9d0c-74ace9dbe3f1)
+![Selenium Upgrade](https://github.com/user-attachments/assets/668da2f2-ed1d-49d0-b1b3-1f10a6c975dc)
+
+
+
 🖥️ I installed WebDriver for Python
 
 ```ruby

@@ -460,7 +460,7 @@ pytest-bdd exposes several pytest hooks which might be helpful building useful r
 
 
 ## Reporting
-### $${\color{darkorange}We executed the tests with the order}$$ 
+### We executed the tests with the order 
 
 behave -f html -o behave-report2000.html
 

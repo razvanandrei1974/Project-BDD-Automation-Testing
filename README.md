@@ -91,10 +91,10 @@ Feature: Open account
     Then I should see a confirmation message
 ```
 
-2. Create _Pages_ directory which includes the following files :
+## 2. Create _Pages_ directory which includes the following files :
 
 
-## $${\color{darkorange}login page}$$
+## $${\color{darkorange}login-page}$$
 ```ruby
 from selenium.webdriver.common.by import By
 
@@ -122,7 +122,7 @@ class LoginPage(Browser):
     def get_error_message(self):
         return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
 ```
-## $${\color{darkorange}register page}$$
+## $${\color{darkorange}register-page}$$
 
 ```ruby
 from selenium.webdriver.common.by import By
@@ -149,9 +149,6 @@ class RegisterPage(Browser):
 
     def navigate_to_register_page(self):
         self.driver.get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC")
-
-    # def click_logout_button(self):
-    #     self.driver.find_element(*self.LOGOUT_BUTTON_SELECTOR).click()
 
     def click_register_button(self):
         self.driver.find_element(*self.REGISTER_BUTTON_SELECTOR).click()
@@ -195,6 +192,10 @@ class RegisterPage(Browser):
     def get_message(self):
         return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
 ```
+
+## $${\color{darkorange}openaccount-page}$$
+
+
 
 
 

@@ -237,7 +237,180 @@ def step_then_see_confirmation_message(context):
 
 ## 3. Create _Steps_ directory which includes the following files :
 
+## 3.1. $${\color{darkorange}steps-login}$$
 
+``` ruby
+import time
+
+from behave import *
+
+
+@given('I am on the login page')
+def step_impl(context):
+    context.LoginPage.navigate_to_login_page()
+
+
+@when('I enter "{username}" in username field')
+def step_impl(context, username):
+    context.LoginPage.enter_username(username)
+    time.sleep(3)
+
+
+@when('I enter "{password}" in password field')
+def step_impl(context, password):
+    context.LoginPage.enter_password(password)
+
+
+@then('I should see an error message')
+def step_impl(context):
+    actual_error_message = context.LoginPage.get_error_message()
+    expected_error_message = 'The username and password could not be verified.'
+    assert expected_error_message in actual_error_message
+
+
+@when('I press the login button')
+def steps_impl(context):
+    context.LoginPage.click_login_button()
+
+# @then('I should see an error for email')
+# def step_impl(context):
+#     actual_error_message = context.LoginPage.get_email_error()
+#     expected_error_message = 'Wrong email'
+#     assert expected_error_message in actual_error_message
+```
+
+## 3.2. $${\color{darkorange}steps-register}$$
+
+``` ruby
+
+import time
+
+from behave import *
+
+
+@given('I am on the register page')
+def step_impl(context):
+    context.RegisterPage.navigate_to_register_page()
+
+
+# @when('I press the logout button')
+# def steps_impl(context):
+#     context.RegisterPage.click_logout_button()
+
+@when('I press the register button')
+def steps_impl(context):
+    context.RegisterPage.click_register_button()
+
+
+@when('I enter "{Razvan}" in FirstName field')
+def step_impl(context, Razvan):
+    context.RegisterPage.enter_firstname(Razvan)
+    time.sleep(2)
+
+
+@when('I enter "{Ungar}" in LastName field')
+def step_impl(context, Ungar):
+    context.RegisterPage.enter_lastname(Ungar)
+    time.sleep(2)
+
+
+@when('I enter "{Ciocarliei}" in Adress field')
+def step_impl(context, Ciocarliei):
+    context.RegisterPage.enter_adress(Ciocarliei)
+    time.sleep(2)
+
+
+@when('I enter "{Resita}" in City field')
+def step_impl(context, Resita):
+    context.RegisterPage.enter_city(Resita)
+    time.sleep(1)
+
+
+@when('I enter "{Caras_Severin}" in State field')
+def step_impl(context, Caras_Severin):
+    context.RegisterPage.enter_state(Caras_Severin)
+    time.sleep(1)
+
+
+@when('I enter "{Z320038}" in Zip Code field')
+def step_impl(context, Z320038):
+    context.RegisterPage.enter_zipcode(Z320038)
+    time.sleep(1)
+
+
+@when('I enter "{P0726165557}" in Phone field')
+def step_impl(context, P0726165557):
+    context.RegisterPage.enter_phone(P0726165557)
+    time.sleep(1)
+
+
+@when('I enter "{SSN1740827354807}" in SSN field')
+def step_impl(context, SSN1740827354807):
+    context.RegisterPage.enter_ssn(SSN1740827354807)
+    time.sleep(1)
+
+
+@when('I enter "{Razvan1199774499}" in User field')
+def step_impl(context, Razvan1199774499):
+    context.RegisterPage.enter_user(Razvan1199774499)
+    time.sleep(1)
+
+
+@when('I enter "{Bnc48757960}" in Passw field')
+def step_impl(context, Bnc48757960):
+    context.RegisterPage.enter_passw(Bnc48757960)
+    time.sleep(1)
+
+
+@when('I enter "{Bnc487579601}" in Confirm field')
+def step_impl(context, Bnc487579601):
+    context.RegisterPage.enter_confirm_field(Bnc487579601)
+    time.sleep(1)
+
+
+@when('I press the submit button')
+def steps_impl(context):
+    context.RegisterPage.click_submit_button()
+
+
+@then('I should see an error register message')
+def step_impl(context):
+    actual_error_message = context.RegisterPage.get_message()
+    expected_error_message = 'Passwords did not match.'
+    assert expected_error_message in actual_error_message
+```
+
+## 3.3. $${\color{darkorange}steps-openaccount}$$
+
+``` ruby
+
+from behave import given, when, then
+from selenium import webdriver
+
+
+@given('I am on the open account page')
+def step_given_on_open_account_page(context):
+    context.browser = webdriver.Chrome()
+    context.browser.get('https://parabank.parasoft.com/parabank/openaccount.htm')
+
+
+@when('I fill in the account details')
+def step_when_fill_in_account_details(context):
+    # Add code to fill in the form details
+    pass
+
+
+@when('I submit the form')
+def step_when_submit_form(context):
+    # Add code to submit the form
+    pass
+
+
+@then('I should see a confirmation message')
+def step_then_see_confirmation_message(context):
+    # Add code to verify the confirmation message
+    pass
+```
 
 
 

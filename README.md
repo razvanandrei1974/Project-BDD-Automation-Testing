@@ -175,6 +175,103 @@ def step_then_see_confirmation_message(context):
 
 ```
 
+
+
+## 💻Scenario outlines
+Scenarios can be parametrized to cover multiple cases. These are called Scenario Outlines in Gherkin, and the variable templates are written using angular brackets.
+
+Example :
+## ▶️ Definition of test scenarios:
+
+1. Create _Features_ directory which includes the following files :
+
+  ## $${\color{green}login.features}$$
+   
+   ▶️ Functionality Menu Login with real and corect data.
+   
+```ruby
+  Feature: Login Feature
+  Background:
+    Given I am on the login page
+  @first
+  Scenario: Login with wrong credentials
+
+    When I enter "Razvan1199774499@" in username field
+    And I enter "Bnc48757960$" in password field
+    And I press the login button
+    Then I should see an error message
+```
+
+  ## $${\color{green}login1.features}$$
+   
+   ▶️ Functionality Menu Login with unreal data.
+   
+```ruby
+  Feature: Login Feature
+  Background:
+    Given I am on the login page
+  @first
+  Scenario: Login with wrong credentials
+
+    When I enter "user_name" in username field
+    And I enter "password" in password field
+    And I press the login button
+    Then I should see an error message
+```
+
+ ## $${\color{green}register.features}$$
+
+ ```ruby
+Feature: Register Feature
+
+  Background:
+    Given I am on the register page
+
+  @second
+  Scenario: Register with corect and real credentials.
+
+    # When I press the logout button
+    When I press the register button
+    And I enter "Razvan" in FirstName field
+    And I enter "Ungar" in LastName field
+    And I enter "Ciocarliei" in Adress field
+    And I enter "Resita" in City field
+    And I enter "CarasSeverin" in State field
+    And I enter "Z320038" in Zip Code field
+    And I enter "P0726165557" in Phone field
+    And I enter "SSN1740827354807" in SSN field
+    And I enter "Razvan11997744" in User field
+    And I enter "Bnc48757960" in Passw field
+    And I enter "Bnc487579601" in Confirm field
+    And I press the submit button
+    Then I should see an error register message
+```
+## $${\color{green}open account.features}$$
+
+```ruby
+Feature: Open account
+
+#  Background:
+#  As a user
+#  I want to open a new account
+#  So that I can use the banking services
+  @three
+  Scenario: Successfully open a new account
+    Given I am on the open account page
+    When I fill in the account details
+    And I submit the form
+    Then I should see a confirmation message
+```
+## 💻Test setup
+Test setup is implemented within the Given section. Even though these steps are executed imperatively to apply possible side-effects, pytest-bdd is trying to benefit of the PyTest fixtures which is based on the dependency injection and makes the setup more declarative style.
+
+Many other BDD toolkits operate on a global context and put the side effects there. This makes it very difficult to implement the steps, because the dependencies appear only as the side-effects during run-time and not declared in the code. The "publish article" step has to trust that the article is already in the context, has to know the name of the attribute it is stored there, the type etc.
+
+In pytest-bdd you just declare an argument of the step function that it depends on and the PyTest will make sure to provide it.
+
+Still side effects can be applied in the imperative style by design of the BDD.
+
+Example : 
 ## 3. Create _Steps_ directory which includes the following files :
 
 ## 3.1. $${\color{darkorange}steps-login}$$
@@ -352,91 +449,24 @@ def step_then_see_confirmation_message(context):
     pass
 ```
 
-## 💻Scenario outlines
-Scenarios can be parametrized to cover multiple cases. These are called Scenario Outlines in Gherkin, and the variable templates are written using angular brackets.
+## 💻Hooks
+pytest-bdd exposes several pytest hooks which might be helpful building useful reporting, visualization, etc. on top of it:
 
-Example :
-## ▶️ Definition of test scenarios:
+* pytest_bdd_before_scenario(login, register, openaccount) - Called before scenario is executed
+- pytest_bdd_after_scenario(login, register, openaccount) - Called after scenario is executed (even if one of steps has failed)
++ pytest_bdd_login_step(login, feature, step, step_func) - Called before step function is executed and it's arguments evaluated
+* pytest_bdd_register_step(register, feature, step, step_func) - Called before step function is executed and it's arguments evaluated
+- pytest_bdd_openaccount_step(openaccount, feature, step, step_func) - Called before step function is executed and it's arguments evaluated
 
-1. Create _Features_ directory which includes the following files :
 
-  ## $${\color{green}login.features}$$
-   
-   ▶️ Functionality Menu Login with real and corect data.
-   
-```ruby
-  Feature: Login Feature
-  Background:
-    Given I am on the login page
-  @first
-  Scenario: Login with wrong credentials
+## Reporting
+### $${\color{darkorange}We executed the tests with the order}$$ 
 
-    When I enter "Razvan1199774499@" in username field
-    And I enter "Bnc48757960$" in password field
-    And I press the login button
-    Then I should see an error message
-```
+behave -f html -o behave-report2000.html
 
-  ## $${\color{green}login1.features}$$
-   
-   ▶️ Functionality Menu Login with unreal data.
-   
-```ruby
-  Feature: Login Feature
-  Background:
-    Given I am on the login page
-  @first
-  Scenario: Login with wrong credentials
+![BEHAVE TEST REPORT](https://github.com/user-attachments/assets/10fab3fb-62a5-457d-af77-38afe0dd4406)
 
-    When I enter "user_name" in username field
-    And I enter "password" in password field
-    And I press the login button
-    Then I should see an error message
-```
 
- ## $${\color{green}register.features}$$
-
- ```ruby
-Feature: Register Feature
-
-  Background:
-    Given I am on the register page
-
-  @second
-  Scenario: Register with corect and real credentials.
-
-    # When I press the logout button
-    When I press the register button
-    And I enter "Razvan" in FirstName field
-    And I enter "Ungar" in LastName field
-    And I enter "Ciocarliei" in Adress field
-    And I enter "Resita" in City field
-    And I enter "CarasSeverin" in State field
-    And I enter "Z320038" in Zip Code field
-    And I enter "P0726165557" in Phone field
-    And I enter "SSN1740827354807" in SSN field
-    And I enter "Razvan11997744" in User field
-    And I enter "Bnc48757960" in Passw field
-    And I enter "Bnc487579601" in Confirm field
-    And I press the submit button
-    Then I should see an error register message
-```
-## $${\color{green}open account.features}$$
-
-```ruby
-Feature: Open account
-
-#  Background:
-#  As a user
-#  I want to open a new account
-#  So that I can use the banking services
-  @three
-  Scenario: Successfully open a new account
-    Given I am on the open account page
-    When I fill in the account details
-    And I submit the form
-    Then I should see a confirmation message
-```
 
 
 

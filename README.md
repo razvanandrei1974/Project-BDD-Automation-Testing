@@ -277,23 +277,24 @@ def step_then_see_confirmation_message(context):
 ### :pushpin: 1.10 Test Design
 Functional test cases were created in Zephyr Squad. Based on the analysis of the specifications, the test design techniques used for generating test cases are:
 Test design is a process that defines how testing has to be done. It involves the process of identifying the testing techniques, test scenarios, test cases, test data, and expected test results.
-### :heavy_check_mark: Summary list of all tests performed.
-[Test Cases](https://github.com/razvanandrei1974/Proiect-Jira-/blob/main/Jira%20TEST%20CASES%20COMPLETE.pdf)
 
-### :heavy_check_mark: Test cases: -> The collection of executed test cases with explanations, the test requirements, what was tested, the expected result and the obtained result.
-The test cases with steps can be viewed here: [Test Cases](https://github.com/razvanandrei1974/Proiect-Jira-/blob/main/Testcase%20pdf.pdf)
+### :heavy_check_mark: Summary list of all tests performed.
+
+![Summary tests ](https://github.com/user-attachments/assets/7ba44092-e8a2-4bc6-8289-67548ba02d68)
+
 
 ### :pushpin: 1.11 Test Implementation
 The following elements are needed to be ready before the test execution phase begins:
 Enter here what needs to be ready for the test execution to begin.
 
 ## :paperclip:	## 2 Test Execution
-- Test cases are executed on the created test Cycle summary: [Cycle Summary](https://github.com/razvanandrei1974/Proiect-Jira-/blob/main/test%20summary%2006.12.2023.pdf)
 
 ### 2.1. Entry criteria defined
-Smoke test passed (being the most basic type of test, this is a very important entry criteria in the process of testing) testing environment is up and running ### 2.2. Exit criteria:
-83,87 % of tests are passed :white_check_mark:
-Three Critical issues have Open status update tests are 84 % passed (update tests will  generate other new issues that impact the application).
+Smoke test passed (being the most basic type of test, this is a very important entry criteria in the process of testing) testing environment is up and running 
+
+### 2.2. Exit criteria:
+100 % of tests are passed 
+
 ### 2.3. Risks:
 User data (banking related data, funds, transactions, etc) might be impacted with update tests stability risks (crashes, disconnects, etc), IE browser might have performance issues versions of IE older than 1.5923e have security vulnerabilities (we could mention what vulnerabilities are) the web page pagination could be impacted when opened on mobile devices stress conditions might impact the web application new browser might not be supported.
 

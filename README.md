@@ -144,129 +144,135 @@ It will be done by generating periodic reports that reflect the current status o
 ### :pushpin: 1.9 Test Analysis
 The testing process will be executed based on the above requirements for the Dependents module. The following test conditions were found:
 
-## :paperclip:	## _Fund Transfer_
-  :black_nib: We check the functionality of the fields below by entering valid data according to the test plan.
--	Payers account no
-*	Payees account no
-+	Amount
--	Submit
-*	Reset
+### login.page
+```ruby
+from selenium.webdriver.common.by import By
 
-## :paperclip:	## _Change Password_
-   :black_nib: Verify if the password change menu works, we also check the functionality of the submit and reset buttons
--	Old Password
-*	New Password
-+	Confirm Password
--	Submit
-*	Reset
+from browser import Browser
 
-## :paperclip:	## _Balance enquiry_
-:black_nib: Verify if the "Account Number" field works correctly and we also check the functionality of the "Submit" and "Reset" buttons if the "Account Number" field accepts the account number.
--	Account No
-*	Submit
-+	Reset
 
-## :paperclip:	## _Mini Statement_
-:black_nib:  Verify if the "Mimi Statement" field works correctly and we also check the functionality of the "Submit" and "Reset" buttons if the "Account Number" field accepts the account number.
--	Account No
-*	Submit
-+	Reset
+class LoginPage(Browser):
+    USERNAME_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[1]/div/form/div[1]/input')
+    PASSWORD_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[1]/div/form/div[2]/input')
+    LOGIN_BUTTON_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[1]/div/form/div[3]/input')
+    MESSAGE_ERROR_LABEL = (By.XPATH, '//*[@id="rightPanel"]/p')
 
-## :paperclip:	## _Customized Statement_
-:black_nib: Verify the functionality of the fields specified below by entering valid data,for the correct operation of the menu "Customised Statement" , but we also check the functionality of the "Submit" and "Reset" buttons.
--	Account No
-*	From Date
-+	To Date
--	Amount Lower Limit
-*	Number Of Transaction
-+	Submit
--	Reset
+    def navigate_to_login_page(self):
+        self.driver.get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC")
 
-## :paperclip:	## _New Customer_
-:black_nib: Verify the functionality of the fields specified below by entering valid data ,for the correct operation of the menu "New Customer", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Customer Name
-*	Gender
-+	Date of Birth
--	Address
-*	City
-+	State
-- PIN
-*	Telephone Number
-+	Email Id 
--	Submit
-*	Reset
+    def enter_username(self, username):
+        self.driver.find_element(*self.USERNAME_FIELD_SELECTOR).send_keys(username)
 
-## :paperclip:	## _New Account_
-:black_nib: Verify the functionality of the fields specified below by entering valid data , for the correct operation of the menu "New Account", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Customer Id
-*	Account Type
-+	Initial deposit
--	Submit
-*	Reset
+    def enter_password(self, password):
+        self.driver.find_element(*self.PASSWORD_FIELD_SELECTOR).send_keys(password)
 
-## :paperclip:	##  _Deposit_
-:black_nib: Verify the functionality of the fields specified below by entering valid data, for the correct operation of the menu "Deposit", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Account Number
-*	Amount Deposit
-+	Description
--	Submit
-*	Reset
+    def click_login_button(self):
+        self.driver.find_element(*self.LOGIN_BUTTON_SELECTOR).click()
+```
+### register.page
+``` ruby
+from selenium.webdriver.common.by import By
 
-## :paperclip:	##  _Withdraw_
-:black_nib: Verify the functionality of the fields specified below by entering valid data, for the correct operation of the menu "Withdraw", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Account Number 
-*	Amount
-+	Description
--	Submit
-*	Reset
+from browser import Browser
 
-## :paperclip:	##  _Delete Customer_
-:black_nib: Verify the functionality of the fields specified below by entering valid data, for the correct operation of the menu "Delete Customer", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Customer Id
-*	Submit
-+	Reset
 
-## :paperclip:	##  _Edit Account_
-:black_nib: Verify the functionality of the fields specified below by entering valid data, for the correct operation of the menu "Edit Account", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Account Number
-*	Submit
-+	Reset
+class RegisterPage(Browser):
+    # LOGOUT_BUTTON_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[1]/ul/li[8]/a')
+    REGISTER_BUTTON_SELECTOR = (By.CSS_SELECTOR, '#loginPanel > p:nth-child(3) > a')
+    FIRSTNAME_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[1]/td[2]/input')
+    LASTNAME_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[2]/td[2]/input')
+    ADRESS_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[3]/td[2]/input')
+    CITY_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[4]/td[2]/input')
+    STATE_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[5]/td[2]/input')
+    ZIPCODE_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[6]/td[2]/input')
+    PHONE_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[7]/td[2]/input')
+    SSN_FIELD_SELECTOR = (By.XPATH, '/html/body/div[1]/div[3]/div[2]/form/table/tbody/tr[8]/td[2]/input')
+    USER_FIELD_SELECTOR = (By.XPATH, '//*[@id="customer.username"]')
+    PASSW_FIELD_SELECTOR = (By.XPATH, '//*[@id="customer.password"]')
+    CONFIRM_FIELD_SELECTOR = (By.XPATH, '//*[@id="repeatedPassword"]')
+    SUBMIT_BUTTON_SELECTOR = (By.XPATH, '//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input')
+    MESSAGE_ERROR_LABEL = (By.XPATH, '//*[@id="repeatedPassword.errors"]')
 
-## :paperclip:	## Form after submitting Edit Account
-:black_nib: Verify after edit account, the functionality of the fields specified below by entering valid data, for the correct operation of the menu "Edit Account", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Customer Id 
-*	Account Type (Drop Down - Saving or Current)
-+	Balance 
--	Submit
-*	Reset
+    def navigate_to_register_page(self):
+        self.driver.get("https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC")
 
-## :paperclip:	##  _Delete Account_
-:black_nib: Verify the functionality of the fields specified below by entering valid data, for the correct operation of the menu "Delete Account", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Account Number
-*	Submit
-+	Reset
+    # def click_logout_button(self):
+    #     self.driver.find_element(*self.LOGOUT_BUTTON_SELECTOR).click()
 
-## :paperclip:	##  _Edit Customer_
-:black_nib: Verify the functionality of the fields specified below by entering valid data, for the correct operation of the menu "Edit Customer", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Customer Id
-*	Submit
-+	Reset
+    def click_register_button(self):
+        self.driver.find_element(*self.REGISTER_BUTTON_SELECTOR).click()
 
-## :paperclip:	## Form after submitting Edit Customer
-:black_nib: Verify, after edit customer, the functionality of the fields specified below by entering valid data, for the correct operation of the menu "Edit customer", but we also check the functionality of the "Submit" and "Reset" buttons.
--	Customer Name 
-*	Gender 
-+	Date of Birth
--	Address
-*	City
-+	State
--	PIN
-*	Telephone Number
-+	Email Id 
--	Submit
-*	Reset
+    def enter_firstname(self, Razvan):
+        self.driver.find_element(*self.FIRSTNAME_FIELD_SELECTOR).send_keys(Razvan)
 
-:heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:  :heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign::heavy_minus_sign:
+    def enter_lastname(self, Ungar):
+        self.driver.find_element(*self.LASTNAME_FIELD_SELECTOR).send_keys(Ungar)
+
+    def enter_adress(self, Ciocarliei):
+        self.driver.find_element(*self.ADRESS_FIELD_SELECTOR).send_keys(Ciocarliei)
+
+    def enter_city(self, Resita):
+        self.driver.find_element(*self.CITY_FIELD_SELECTOR).send_keys(Resita)
+
+    def enter_state(self, CarasSeverin):
+        self.driver.find_element(*self.STATE_FIELD_SELECTOR).send_keys(CarasSeverin)
+
+    def enter_zipcode(self, Z320038):
+        self.driver.find_element(*self.ZIPCODE_FIELD_SELECTOR).send_keys(Z320038)
+
+    def enter_phone(self, P0726165557):
+        self.driver.find_element(*self.PHONE_FIELD_SELECTOR).send_keys(P0726165557)
+
+    def enter_ssn(self, SSN1740827354807):
+        self.driver.find_element(*self.SSN_FIELD_SELECTOR).send_keys(SSN1740827354807)
+
+    def enter_user(self, Razvan11997744):
+        self.driver.find_element(*self.USER_FIELD_SELECTOR).send_keys(Razvan11997744)
+
+    def enter_passw(self, Bnc48757960):
+        self.driver.find_element(*self.PASSW_FIELD_SELECTOR).send_keys(Bnc48757960)
+
+    def enter_confirm_field(self, Bnc487579601):
+        self.driver.find_element(*self.CONFIRM_FIELD_SELECTOR).send_keys(Bnc487579601)
+
+    def click_submit_button(self):
+        self.driver.find_element(*self.SUBMIT_BUTTON_SELECTOR).click()
+
+    def get_message(self):
+        return self.driver.find_element(*self.MESSAGE_ERROR_LABEL).text
+```
+### openaccount.page
+``` ruby
+from behave import given, when, then
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select
+
+@given('I am on the open account page')
+def step_given_on_open_account_page(context):
+    context.browser = webdriver.Chrome()
+    context.browser.get('https://parabank.parasoft.com/parabank/openaccount.htm')
+
+@when('I fill in the account details')
+def step_when_fill_in_account_details(context):
+    # Select account type
+    account_type_dropdown = Select(context.browser.find_element(By.ID, 'type'))
+    account_type_dropdown.select_by_visible_text('SAVINGS')
+
+    # Select from account
+    from_account_dropdown = Select(context.browser.find_element(By.ID, 'fromAccountId'))
+    from_account_dropdown.select_by_index(0)  # Select the first account in the list
+
+@when('I submit the form')
+def step_when_submit_form(context):
+    submit_button = context.browser.find_element(By.XPATH, '//input[@value="Open New Account"]')
+    submit_button.click()
+
+@then('I should see a confirmation message')
+def step_then_see_confirmation_message(context):
+    confirmation_message = context.browser.find_element(By.XPATH, '//h1[text()="Account Opened!"]')
+    assert confirmation_message.is_displayed()
+```
 
 ### :pushpin: 1.10 Test Design
 Functional test cases were created in Zephyr Squad. Based on the analysis of the specifications, the test design techniques used for generating test cases are:

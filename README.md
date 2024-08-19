@@ -2,29 +2,27 @@
 
 # :pushpin:	  _Test Planing_ 
 
-## :pushpin:	 Guru99 Aplication 
+## :pushpin:	 Para Bank Aplication 
 
-## :pushpin:	 Guru99 Bank Project
+## :pushpin:	 [ParaBank Page](https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC)
 
  
 ## :pushpin:	  _Software request_
  
-1.3
- 
-03/11/2023
+Date: 01.08.2024
 
 ## :pushpin:	  Revision history
 
 
 | Date | Description   | Author   | Comments |
 | :-----: | :---: | :---: | :---: |
-|03.11.2023 | Test Plan for version 1.1   | -   | Draft test plan |
-| 06.12.2023 | v1.1  | Razvan Ungar   | - |
+01.08.2024 | Test Plan for version 1.1   | -   |  Test plan |
+| 19.08.2024 | v1.1  | Razvan Ungar   | - |
 
 
 # :pushpin:	# 1.Intro
 
-#### :pushpin:	The Guru99 Bank project aims to provide net banking facility to its customers.
+#### :pushpin:	The Parabank project aims to provide net banking facility to its customers.
 #### :pushpin:	This release will have limited features. Over a period of time , new and new functionalities will be added to the site.
 
 ## :pushpin:	 Introduction

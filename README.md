@@ -45,12 +45,10 @@ The banking site will be only compatible with Chrome version 27 and above
 The Test Plan is designed to describe all details of testing for the X module from the Guru99 application.
 
 The plan identifies the items to be tested, the features to be tested, the types of testing to be performed, the personnel responsible for testing, the resources and schedule required to complete testing, and the risks associated with the plan
-##  :ballot_box_with_check: Business requirements
-### New Account
-- T1    Customer Id - Customer ID is required
-* T2    Customer Id - Special character are not allowed
-+ T3    Customer Id - Characters are not allowed
-- T3.1 Customer Id - First character cannot have space
+##  :ballot_box_with_check: Login Menu
+
+![login.features](https://github.com/user-attachments/assets/492679c3-b2f9-4e28-91ca-d2ca3f5a890e)
+
 
 ### New Customer
 - T4    Customer Name – Numbers are not allowed

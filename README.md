@@ -26,11 +26,12 @@ Date: 01.08.2024
 #### :pushpin:	This release will have limited features. Over a period of time , new and new functionalities will be added to the site.
 
 ## :pushpin:	 Introduction
-The Guru99 Bank project aims to provide net banking facility to its customers.
+The ParaBank project aims to provide net banking facility to its customers.
 This release will have limited features. Over a period of time , new and new functionalities will be added to the site.
 
 ### :pushpin: 1.1 Purpose
-The Purpose of this document is to outline the requirements for the Guru99 Banking website to be developed for Guru99 Tech. Pvt. Ltd. This document will be used by all stakeholders including developers and testers.
+The Purpose of this document is to outline the requirements for the Parabank Banking website to be developed for © Parasoft Software. This document will be used by all stakeholders including developers and testers.
+
 ### :pushpin:	 1.2 Scope
 The scope of this project is limited to the testing of the features described in the succeeding sections of this document.
 Non-functional testing like stress,performance is beyond scope of this project.

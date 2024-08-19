@@ -137,7 +137,9 @@ It will be done by generating periodic reports that reflect the current status o
 
 ### Daily Report 
 [ParaBank Test Results](https://github.com/razvanandrei1974/Project-BDD-Automation-Testing/blob/main1/Behave%20Test%20Report.pdf%2019.08.2024.pdf)
-![ParaBank Test Results](https://github.com/razvanandrei1974/Project-BDD-Automation-Testing/blob/main1/Behave%20Test%20Report.pdf%2019.08.2024.pdf)
+
+[ParaBank Test Results]()
+
 
 ### :pushpin: 1.9 Test Analysis
 The testing process will be executed based on the above requirements for the Dependents module. The following test conditions were found:

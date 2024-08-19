@@ -126,7 +126,9 @@ Test scope is a documented description of the boundaries, objectives, deliverabl
 #### Tests not in scope:
 1.1.5 Risks detected
 Project risks:
-### :no_entry: Critical Bugs - RUT-60, RUT-69, RUT-72 and RUT-74 impact the product launch because the page crashes.
+### :no_entry: If you enter login data that were not used when registering in the application, then the error message appears:"The username and password could not be verified"
+![image](https://github.com/user-attachments/assets/0654e97a-fbd0-43aa-bba0-b8d21552c83a)
+
 ### :arrow_up_small: Medium Bugs - The RUT-55,RUT-61,RUT-63,RUT-64,RUT-65 and RUT-67 bugs can be fixed later.
 
 Product risks:

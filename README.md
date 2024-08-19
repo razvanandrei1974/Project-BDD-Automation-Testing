@@ -121,7 +121,6 @@ Feature: Open account
 ### :pushpin: 1.7 Test scope
 #### Tests in scope:
 Test scope is a documented description of the boundaries, objectives, deliverables, and criteria that guide the testing process. In essence, it defines the “what,” “why,” and “how” of your software testing endeavors.
-![Test in Scope](https://github.com/razvanandrei1974/Proiect-Jira-/blob/main/TEST%20IN%20SCOPE.webp)
 
 #### Tests not in scope:
 1.1.5 Risks detected
@@ -129,19 +128,15 @@ Project risks:
 ### :no_entry: If you enter login data that were not used when registering in the application, then the error message appears:"The username and password could not be verified"
 ![image](https://github.com/user-attachments/assets/0654e97a-fbd0-43aa-bba0-b8d21552c83a)
 
-### :arrow_up_small: Medium Bugs - The RUT-55,RUT-61,RUT-63,RUT-64,RUT-65 and RUT-67 bugs can be fixed later.
-
 Product risks:
 1.1.6 Evaluating entry criteria
 The entry criterias defined in the Test Planning phase have been achieved and the test process can continue.
-- Delays in the delivery of the AUT for testing
-* Lack of technical knowledge on specific areas of the product
-+ Lack of testing environments and/or data that effectively simulate real customer usage
 
 ### :pushpin: 1.8 Test Monitoring and Control
 It will be done by generating periodic reports that reflect the current status of the test.
-### Daily Report 
 
+### Daily Report 
+[ParaBank Page]([https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC](http://localhost:63342/Parabank_BDD/Parabank_BDD/behave-reportR2000.html?_ijt=f9q02buup7kudkfelib087dljj&_ij_reload=RELOAD_ON_SAVE))
 
 ### :pushpin: 1.9 Test Analysis
 The testing process will be executed based on the above requirements for the Dependents module. The following test conditions were found:

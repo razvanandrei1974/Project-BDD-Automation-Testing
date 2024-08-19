@@ -136,7 +136,7 @@ The entry criterias defined in the Test Planning phase have been achieved and th
 It will be done by generating periodic reports that reflect the current status of the test.
 
 ### Daily Report 
-[ParaBank Page]([https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC](http://localhost:63342/Parabank_BDD/Parabank_BDD/behave-reportR2000.html?_ijt=f9q02buup7kudkfelib087dljj&_ij_reload=RELOAD_ON_SAVE))
+[ParaBank Test Results](http://localhost:63342/Parabank_BDD/Parabank_BDD/behave-reportR2000.html?_ijt=f9q02buup7kudkfelib087dljj&_ij_reload=RELOAD_ON_SAVE))
 
 ### :pushpin: 1.9 Test Analysis
 The testing process will be executed based on the above requirements for the Dependents module. The following test conditions were found:

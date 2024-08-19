@@ -303,38 +303,25 @@ User data (banking related data, funds, transactions, etc) might be impacted wit
 
 | Module Name | Aplicabile Rules   | Description   |
 | :-----: | :---: | :-------------------------------------------------------------:  |
-|Balance enquiry|  Manager customer  | **Customer:**  A customer can have multiple bank accounts. He can view balance of his accounts only . Manager: A manager can view balance of all the customers who come under his supervision|
-|Fund Transfer|  Manager customer  |Customer: A customer can have transfer funds from his “own” account to any destination account. Manager: A manager can transfer funds from any source bank account to destination account|				   							
-|Mini Statement|  Manager customer  |A Mini statement will show last 5 transactions of an account. Customer: A customer can see mini-statement of only his “own” accounts. Manager: A manager can see ministatement of any account. |	 
-|Customized Statement|  Manager customer  |A customized statement allows you to filter and display transactions in an account based on date, transaction value Customer: A customer can see Customized- statement of only his “own” accounts Manager: A manager can see Customized -statement of any account |
-|Change Password|  Manager customer  |Customer: A customer can change password of only his account.Manager: A manager can change password of only his account. He cannot change passwords of his customers |
-|New Customer|  Manager   |Manager: A manager can add a new customer.Manager: A manager can edit details like address, email , telephone of a customer. |
-|New Account|  Manager   |Currently system provides 2 types of accounts ●	Saving ●	Current A customer can have multiple saving accounts (one in his name , other in a joint name etc).He can have multiple current accounts for different companies he owns. Or he can have a multiple current and saving accounts. Manager: A manager can add a new account for an existing customer.  |
-|Edit Account|  Manager   |Manager: A manager can add a edit account details for an existing account|
-|Delete Account|  Manager   |Manager: A manager can add a delete an account for a customer.|
-|Delete Customer|  Manager   |A customer can be deleted only if he/she has  no active current or saving accounts Manager: A manager can delete a customer.|
-|Deposit|  Manager   |Manager: A manager can deposit money into any account. Usually done when cash is deposited at a bank branch.|
-|Withdrawal|  Manager   |Manager: A manager can withdraw money from any account. Usually done when cash is withdrawn at a bank branch.|
+|Login Menu|  Customer  | **Customer:**  A customer can have multiple bank accounts. He can view balance of his accounts only . Manager: A manager can view balance of all the customers who come under his supervision|
+|Register Menu|  Customer  |Customer: A customer create the acoount|				   							
+|Open Account Menu|  Customer  |Customer open the multiple account |	 
 
 ## 2.4.1.Test implementation
 
-
-
-
 ## 3.0.  Test closure
 - at least 83,87 % of tests are passed :white_check_mark:
+![Test Results](https://github.com/user-attachments/assets/a86f3008-91e7-47bc-975e-dd9a650f0339)
+
   
 ## :pushpin: Conclusions:
-* 62 test cases were created. :eight_spoked_asterisk:
-+ 52 testcases received "Pass" :white_check_mark:
-- 10 test cases were declared "Bug" of which RUT-60, RUT-69, RUT-72 and RUT-74 impact the product launch because the page crashes. :heavy_exclamation_mark:
-* The RUT-55,RUT-61,RUT-63,RUT-64,RUT-65 and RUT-67 bugs can be fixed later. :heavy_exclamation_mark:
-+ For testing, an Epic, 2 Stories and 14 Tasks were created.
-- For the product launch, I recommend fixing all the bugs.
-* After the fixing all the bugs execution of a "Regretion Testing".
-+ Both from the Manager menu and from the Customer menu, all the tests specified in the Test Plan were executed.
-- For future projects, I recommend that the menus and fields necessary to access them have a better functionality.
+* 24 test cases were created. :eight_spoked_asterisk:
++ 24 testcases received "Pass" :white_check_mark:
+- 0 test cases were declared "Bug" of which RUT-60, RUT-69, RUT-72 and RUT-74 impact the product launch because the page crashes. :heavy_exclamation_mark:
+* For future projects, I recommend that the menus and fields necessary to access them have a better functionality.
 
+************************************************************************************************************************************************************************************************************************
+# Automation Testing- Installation, Create Scenarios and execute test with Behave(BDD)+
 ************************************************************************************************************************************************************************************************************************
 📍We created the automated test plan with Behave for the _"Login"_ menu , _"Register"_ menu abd _Open Account_ menu for
 the Parabank application.

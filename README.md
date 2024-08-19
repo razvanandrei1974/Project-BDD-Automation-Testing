@@ -45,9 +45,54 @@ The banking site will be only compatible with Chrome version 27 and above
 The Test Plan is designed to describe all details of testing for the X module from the Guru99 application.
 
 The plan identifies the items to be tested, the features to be tested, the types of testing to be performed, the personnel responsible for testing, the resources and schedule required to complete testing, and the risks associated with the plan
-##  :ballot_box_with_check: Login Menu
-
+##  :ballot_box_with_check: Login Feature
 ![login.features](https://github.com/user-attachments/assets/492679c3-b2f9-4e28-91ca-d2ca3f5a890e)
+``` Ruby
+Feature: Login Feature
+
+  Background:
+    Given I am on the login page
+
+  @first
+  Scenario: Login with wrong credentials
+
+    When I enter "Razvan1199774499@" in username field
+    And I enter "Bnc48757960$" in password field
+    And I press the login button
+    Then I should see an error message
+```
+
+##  :ballot_box_with_check: Register Feature
+
+![Register Feature](https://github.com/user-attachments/assets/c0d02d55-0035-4546-a52c-a75ecb16d55f)
+
+``` Ruby
+Feature: Register Feature
+
+  Background:
+    Given I am on the register page
+
+  @second
+  Scenario: Register with incorect credentials, diferit password
+
+    # When I press the logout button
+    When I press the register button
+    And I enter "Razvan" in FirstName field
+    And I enter "Ungar" in LastName field
+    And I enter "Ciocarliei" in Adress field
+    And I enter "Resita" in City field
+    And I enter "CarasSeverin" in State field
+    And I enter "Z320038" in Zip Code field
+    And I enter "P0726165557" in Phone field
+    And I enter "SSN1740827354807" in SSN field
+    And I enter "Razvan11997744" in User field
+    And I enter "Bnc48757960" in Passw field
+    And I enter "Bnc487579601" in Confirm field
+    And I press the submit button
+    Then I should see an error register message
+```
+
+
 
 
 ### New Customer

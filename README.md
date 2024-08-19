@@ -304,7 +304,7 @@ User data (banking related data, funds, transactions, etc) might be impacted wit
 | Module Name | Aplicabile Rules   | Description   |
 | :-----: | :---: | :-------------------------------------------------------------:  |
 |Login Menu|  Customer  | **Customer:**  A customer can have multiple bank accounts. He can view balance of his accounts only . Manager: A manager can view balance of all the customers who come under his supervision|
-|Register Menu|  Customer  |Customer: A customer create the acoount|				   							
+|Register Menu|  Customer  |Customer: A customer create the accoount|				   							
 |Open Account Menu|  Customer  |Customer open the multiple account |	 
 
 ## 2.4.1.Test implementation

@@ -138,7 +138,7 @@ It will be done by generating periodic reports that reflect the current status o
 ### Daily Report 
 [ParaBank Test Results](https://github.com/razvanandrei1974/Project-BDD-Automation-Testing/blob/main1/Behave%20Test%20Report.pdf%2019.08.2024.pdf)
 
-[ParaBank Test Results]()
+![Test Results](https://github.com/user-attachments/assets/ff2a6c53-ff84-4124-a545-1ee83edb75d8)
 
 
 ### :pushpin: 1.9 Test Analysis
